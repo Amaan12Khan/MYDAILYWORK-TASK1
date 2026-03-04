@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Movie Genre Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎬 AI Movie Genre Classifier</h1>
+
+    <form action="/predict" method="post">
+        <textarea name="description" placeholder="Enter movie description..." required></textarea>
+        <button type="submit">Predict Genre</button>
+    </form>
+
+    {% if prediction %}
+<div class="result">
+    <h2>Predicted Genre: {{ prediction }}</h2>
+</div>
+{% endif %}
+</div>
+
+</body>
+</html>
